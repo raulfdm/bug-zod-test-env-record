@@ -4,12 +4,12 @@ import { z } from "zod";
 const ZodRecord = z.record(
 	z.string(),
 	z.string().or(z.number()).or(z.boolean()).optional(),
-);
+).default({});
 
-const ValibotRecord = v.record(
+const ValibotRecord = v.optional(v.record(
 	v.string(),
 	v.optional(v.union([v.string(), v.number(), v.boolean()])),
-);
+), {})
 
 export const recordSchemas: [
 	schemaLibName: string,

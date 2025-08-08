@@ -9,7 +9,7 @@ recordSchemas.forEach(([type, parseFn]) => {
 			assert.deepStrictEqual(data, { name: "John", age: "30" });
 		});
 
-		test("should validate import.meta.env", () => {
+		test("should validate import.meta.env (spreading)", () => {
 			const data = parseFn({
 				...import.meta.env,
 			});
@@ -22,7 +22,7 @@ recordSchemas.forEach(([type, parseFn]) => {
 			assert.ok(data !== null, "Parsed data should not be null");
 		});
 
-		test("should validate import.meta.env no spread", () => {
+		test("should validate import.meta.env (no spread)", () => {
 			const data = parseFn(import.meta.env);
 
 			assert.strictEqual(
