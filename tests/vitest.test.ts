@@ -21,7 +21,7 @@ describe.each(recordSchemas)("%s", (_name, parseFn) => {
 		expect(data).toEqual(expect.any(Object));
 	});
 
-	test("should validate process.env", () => {
+	test("should validate process.env (spreading)", () => {
 		const data = parseFn({
 			...process.env,
 		});
@@ -29,7 +29,7 @@ describe.each(recordSchemas)("%s", (_name, parseFn) => {
 		expect(data).toEqual(expect.any(Object));
 	});
 
-	test("should validate process.env no spread", () => {
+	test("should validate process.env (no spread)", () => {
 		const data = parseFn(process.env);
 
 		expect(data).toEqual(expect.any(Object));

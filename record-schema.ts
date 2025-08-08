@@ -15,6 +15,6 @@ export const recordSchemas: [
 	schemaLibName: string,
 	(config: Record<string, any>) => any,
 ][] = [
-	["zod", (config: Record<string, any>) => ZodRecord.parse(config)],
 	["valibot", (config: Record<string, any>) => v.parse(ValibotRecord, config)],
+	["zod", (config: Record<string, any>) => ZodRecord.parse(config)],
 ];

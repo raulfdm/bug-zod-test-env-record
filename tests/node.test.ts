@@ -33,7 +33,7 @@ recordSchemas.forEach(([type, parseFn]) => {
 			assert.ok(data !== null, "Parsed data should not be null");
 		});
 
-		test("should validate process.env", () => {
+		test("should validate process.env (spreading)", () => {
 			const data = parseFn({
 				...process.env,
 			});
@@ -46,7 +46,7 @@ recordSchemas.forEach(([type, parseFn]) => {
 			assert.ok(data !== null, "Parsed data should not be null");
 		});
 
-		test("should validate process.env no spread", () => {
+		test("should validate process.env (no spread)", () => {
 			const data = parseFn(process.env);
 
 			assert.strictEqual(
